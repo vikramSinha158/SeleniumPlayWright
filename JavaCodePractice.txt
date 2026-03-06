@@ -1,0 +1,547 @@
+
+Take input from keyboard
+
+import java.util.Scanner;
+
+public class AddTwoNumbers {
+   public static void main(String[] args) {
+      // Creating an object of Scanner class
+      Scanner sc = new Scanner(System.in);
+
+      // Reading two Integer numbers
+      // using nextInt() method
+      System.out.print("Enter the first number: ");
+      int num1 = sc.nextInt();
+
+      System.out.print("Enter the second number: ");
+      int num2 = sc.nextInt();
+
+      // Calculating the sum
+      int sum = num1 + num2;
+
+      // Printing the su
+      System.out.println("The sum of the two numbers is: " + sum);
+   }
+}
+
+list
+public class Test {
+
+   public static void main(String args[]) {
+      List<String> names = Arrays.asList("James", "Larry", "Tom", "Lacy");
+
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(",");
+      }
+   }
+}
+
+----
+Polymorphism
+public class vechile{
+
+   public void Display(){
+   System.out.printlun("v");
+   }
+}
+public class Car extends vechile{
+   @override
+  public void Display(){
+   System.out.printlun("c");
+   }
+}
+
+public class Bike extends vechile{
+   @override
+  public void Display(){
+   System.out.printlun("B");
+   }
+}
+
+Plublic Class Main{
+
+    Public static void main(String [] arg)
+	{
+	 vechile vc =new Car();
+	 echile vn =new Bike();
+	 vc.Display();
+	 vn.Display();
+	
+	}
+}
+--Read and write file
+
+public class FileTest {
+   public static void main(String args[]) {
+      try {
+         File file = new File("d://test//testFile1.txt");
+
+         //Create the file
+         if (file.createNewFile()) {
+            System.out.println("File is created!");
+         } else {
+            System.out.println("File already exists.");
+         } 
+
+         // Write Content
+         FileWriter writer = new FileWriter(file);
+         writer.write("Test data");
+         writer.close();
+
+
+         // read content
+         FileReader reader = new FileReader(file);
+
+         int c;
+         while ((c = reader.read()) != -1) {
+            char ch = (char) c;
+            System.out.print(ch);
+         }
+      } catch (IOException e) {
+         System.out.print("Exception");
+      }	
+   }
+}
+
+       List<String> content = Files.readAllLines(Paths.get("d://test/testFile3.txt"));
+	      System.out.println(content);
+----------------
+Make directory
+public class DirectoryTest {
+   public static void main(String args[]) {
+      String dirname = "/tmp/user/java/bin";
+      File directory = new File(dirname);
+
+      // Create directory now.
+      directory.mkdirs();
+
+      // create new file object
+      File file = new File("/tmp/user/java/bin");
+
+      System.out.println(file.exists());      
+   }
+}
+0000
+Exceptionpublic class ExcepTest {
+
+   public static void main(String args[]) {
+      int a = 3;
+      int b = 0;
+      try {
+         System.out.println("result:" + divide(a,b));
+      } catch (Exception e) {
+         System.out.println("Exception: " + e);
+      }
+   }
+
+   private static int divide(int a, int b) throws Exception {
+      if(b == 0) {
+         throw new Exception("second argument cannot be zero.");
+      }
+      return a / b;
+   }
+}
+
+----
+Referse Syring
+
+Public void Reverse string()
+{
+     String input="TEst";
+	 String reverse="";
+	 
+	 For(int i=input.length()-1;i>=0;i--)
+	 {
+	      reverse=reverse+input.CharAt(i);
+	     
+	 }
+	 ou------
+	 char[] ch=str.toCharArray();
+        for (int i = ch.length-1; i >= 0; i--) {
+            reversed += ch[i];
+        }
+	--------
+	 System.out.println(reverse);
+	 
+}
+-------------------------------------
+Remove dup;icate char from string
+public void RemoveDuplicate()
+{
+     String input="TEstss";
+	 String result="";
+	 
+	 for(int i=0;i<input.length();i++)
+	 {
+	     char ch=input.charAt(i);
+		 if(!result.contains(String.valueOf(ch)))
+		 {
+		    result += ch;
+		 }
+	 }
+	 System.out.println(result);
+
+}
+
+Second way
+public void RemoveDuplicate(){
+     String input="TEstss";
+	 StringBuilder result=new StringBuilder();
+	 HashSet<Charecter> set= new HashSet<>();
+	 
+	 for(char c :input.toCharArray())
+	 {
+	        set.add(c);
+	 }
+	 StringBuilder 
+	 for(char c :set)
+	 {
+	     result.append(c);
+	     
+	 }
+	 
+	 System.out.println(result);
+}
+------------------ 
+Prime Number
+
+Public void PrimeNumber()
+{
+
+  int num=14;
+  Boolean isPrime=true;
+  for(int i=2;i<num/2;i++)
+  {
+     if(num%i==0)
+	 {
+	    isPrime=true;
+		break;
+	 }
+  }
+       if (isPrime) {
+            System.out.println(num + " is a Prime Number.");
+        } else {
+            System.out.println(num + " is NOT a Prime Number.");
+        }
+
+}
+------------------------
+List sorting
+
+Public void Sorting(){
+
+   ArrayList<Integer> list = new ArrayList<>();
+   ---if list is used,above line will be replaced-------------
+   List<Integer> list = new ArrayList<>();
+   -----------------------
+   
+        list.add(50);
+        list.add(10);
+        list.add(40);
+        list.add(20);
+        list.add(30);
+
+        for (int i = 0; i < list.size(); i++)
+            {
+                for (int j = i + 1; j < list.size(); j++)
+                {
+                    int tempI = list.get(i);
+                    int tempJ = list.get(j);
+                    if (tempI > tempJ)
+                    {
+                        list.set(i, tempJ);
+                        list.set(j , tempI);
+                    }
+                }
+            }
+
+        System.out.println("Sorted List: " + list);
+}
+second way
+int list[] = {8, 5, 3, 10, 2, 1, 15, 20};
+
+    for (int i = 0; i < list.length; i++)
+            {
+                for (int j = i + 1; j < list.length; j++)
+                {
+                    int tempI = list[i];
+                    int tempiJ = list[j];
+                    if (tempI > tempiJ)
+                    {
+                        list[i] = tempiJ;
+                        list[j] = tempI;
+                    }
+                }
+            }
+            for(int c:list)
+            {
+                 System.out.println("Sorted List: " + c);
+            }
+-----------------------------------------------
+Get Count of char from string
+public void Occurence()
+{
+    String str="ddf";
+	Map<Character,Integer> map=HashMap<>();
+	
+	for(char c:str.toCharArray)
+	{
+	   map.put(c,map.getOrDefault(c,0)+1);
+	}
+	System.out.println(map);
+}
+second way
+public void CharCount()
+{
+   String str ="sdfdd";
+   Map<Character,Integer> map=new HashMap<>();
+   
+   for(char c:str.toCharArray())
+   {
+        if(!map.containsKey(c))
+		{
+		   map.put(c,1);
+		}
+		else 
+		map.put(c,map.get(c)+1);
+   }
+   
+   for(Map.Entry<Character,Integer> entry :map.entrySet())
+   {
+         System.out.printlin(entry.getkey() +" - "+entry.hetValue())
+   }
+}
+
+----------------------------
+isPalindrome
+
+String str="ABCCBA";
+     Boolean isPalindrome=true;
+     int i=0;
+     int j=str.length()-1;
+     while(i<j)
+     {
+         if(str.charAt(i)!=str.charAt(j))
+         {
+             isPalindrome=false;
+             break;
+         }
+		 i++;
+		 j--;
+     }
+    
+      if (isPalindrome) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+	Second way
+	 String str = "madam";
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        if (str.equals(reversed)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+	---------------
+	Sum of digits
+	
+	 int number = 234;
+	  int sum = 0;
+	  while (number > 0) {
+            int digit = number % 10;  // Extract last digit
+            sum = sum + digit;       // Add digit to sum
+            number = number / 10;    // Remove last digit
+        }
+		
+0-----------------------
+va program to find the sum of even numbers in an array:
+Public void SumofEvenMumber()
+{
+
+       int[] arr = {8, 5, 3, 10, 2, 1, 15, 20};
+     int sum = 0;
+     for (int i = 0; i < larr.ength; i++) {
+            if (arr[i] % 2 == 0) {   // Check if number is even
+                sum += arr[i];
+            }
+        }
+
+        System.out.println("Sum of even numbers: " + sum);
+
+}
+------------------------------------------
+
+public static void exchangeFirstAndLastCharacter() {
+        String input = "The Game is not going Anywhere";
+
+        StringBuilder newString = new StringBuilder();
+
+        // Split the sentence into words
+        String[] words = input.split(" ");
+
+        for (String word : words) {
+            // Convert word to char array
+            char[] chars = word.toCharArray();
+
+            // Swap first and last character if word length > 1
+            if (chars.length > 1) {
+                char temp = chars[0];
+                chars[0] = chars[chars.length - 1];
+                chars[chars.length - 1] = temp;
+            }
+
+            // Append the modified word to new string
+            newString.append(chars);
+            newString.append(" ");
+        }
+
+        // Print the final result
+        System.out.println(newString.toString().trim());
+    }
+	
+--------------------------------------------------------
+reverse Each Word Sentence
+public static void reverseEachWordSentence() {
+        String input = "The Game is not going Anywhere";
+        String str = "";  // Equivalent to String.Empty in C#
+        
+        // Split the sentence into words
+        String[] words = input.split(" ");
+
+        // Loop through each word
+        for (String word : words) {
+            char[] chars = word.toCharArray();
+            
+            // Reverse the characters in the word
+            for (int i = chars.length - 1; i >= 0; i--) {
+                str += chars[i];  // Append each character in reverse order
+            }
+
+            str += " ";  // Add space after each word
+        }
+
+        // Print the final reversed sentence
+        System.out.println(str.trim());  // trim() removes trailing space
+    }
+	
+	-------------------
+	 public void readStringAndFindTheSumOfAllDigits() {
+        String inputString = "11603529";
+        int sum = 0;
+
+        for (char c : inputString.toCharArray()) {
+            if (Character.isDigit(c)) {
+                sum += Character.getNumericValue(c);
+            }
+        }
+
+        System.out.println("The sum of digits in the string is: " + sum);
+    }
+	
+	--------------------------------------------
+	
+	Factorial
+	Public void Factorial()
+	{
+	
+	     int number = 6;
+
+        long factorial = 1;
+
+        for(int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+
+        System.out.println("Factorial of " + number + " is: " + factorial);
+	}
+	second way
+	Public void Factorial()
+	{
+		     int n = 6;
+			  int result;
+	
+	     if (n == 0 || n == 1)
+            return 1;
+        else
+            return n * factorial(n - 1);
+
+        System.out.println("Factorial of " + number + " is: " + result);
+	}
+	-------------------------------
+
+ public static void rotateLeft() {
+        int[] array = {1, 3, 4, 6};
+        int size = array.length;
+        int temp;
+
+        for (int j = size - 1; j > 0; j--) {
+            temp = array[size - 1];
+            array[array.length - 1] = array[j - 1];
+            array[j - 1] = temp;
+        }
+
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+	
+-----------------------------------------------------------
+ public void Swap()
+        {
+
+            int a = 10;
+            int b = 20;
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            System.out.println("a after swap = " + a);
+            System.out.println("b after swap = " + b);
+        }
+		
+-------------------------------------------
+public class PossibleSubstring {
+
+    public static void possibleSubstring() {
+        String str = "abcd";
+
+        for (int i = 0; i < str.length(); i++) {
+            StringBuilder sb = new StringBuilder(str.length() - 1);
+
+            for (int j = i; j < str.length(); j++) {
+                sb.append(str.charAt(j));
+                System.out.println(sb.toString());
+            }
+        }
+    }
+
+======================
+Take daye as input and print in given formate
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class DateFormatExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter date (yyyy-MM-dd): ");
+        String inputDate = scanner.nextLine();
+
+        // Parse input date
+        LocalDate date = LocalDate.parse(inputDate);
+
+        // Define output format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        // Format date
+        String formattedDate = date.format(formatter);
+
+        System.out.println("Formatted Date: " + formattedDate);
+
+        scanner.close();
+    }
+}
